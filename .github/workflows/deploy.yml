@@ -17,31 +17,47 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # Custom domain at the domain root ("/", "/partnership.php") when
-      # site_base is "."; empty keeps the repository project site ("/mbh/",
-      # "/mbh/partnership.php").
-      GITHUB_PAGES: ${{ github.event.inputs.site_base == '' && 'true' || '' }}
-      VITE_BASE: ${{ github.event.inputs.site_base }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
+      # Custom domain at the domain root ("/", "/partnership.php") when
+      # site_base is "."; empty keeps the repository project site
+      # ("/mbh/", "/mbh/partnership.php").
+      - name: Select deploy base
+        run: |
+          if [ "${{ github.event.inputs.site_base }}" = "." ]; then
+            echo "VITE_BASE=." >> "$GITHUB_ENV"
+          elif [ -n "${{ github.event.inputs.site_base }}" ]; then
+            echo "VITE_BASE=${{ github.event.inputs.site_base }}" >> "$GITHUB_ENV"
+          else
+            echo "GITHUB_PAGES=true" >> "$GITHUB_ENV"
+          fi
+
       - run: npm ci
+
       - run: npm run build
-      - uses: actions/configure-pages@v5
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        env:
+          GITHUB_PAGES: ${{ env.GITHUB_PAGES }}
         with:
-          # Create the Pages site (with GitHub Actions as source) if the
+          # Create the Pages site (GitHub Actions as source) if the
           # repository has not enabled Pages yet.
           enablement: true
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -52,5 +68,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

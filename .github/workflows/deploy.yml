@@ -28,7 +28,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          # No npm cache here: the repo's .npmrc would need to be present
+          # before setup-node computes the cache key, and the cache post
+          # step fails the job when the path is missing. Builds are fast
+          # enough without it.
 
       # Custom domain at the domain root ("/", "/partnership.php") when
       # site_base is "."; empty keeps the repository project site

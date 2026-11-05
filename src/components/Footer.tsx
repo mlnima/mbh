@@ -1,3 +1,5 @@
+import { withBase } from '../base';
+
 interface FooterProps {
   onNavigatePartnership: () => void;
 }
@@ -22,7 +24,7 @@ export function Footer({ onNavigatePartnership }: FooterProps) {
             </p>
             <p className="mb-1">
               <a
-                href="/partnership.php"
+                href={withBase('/partnership.php')}
                 className="nav-link d-inline px-0 text-white"
                 style={{ fontWeight: 500 }}
                 id="id1"
@@ -139,7 +141,7 @@ export function Footer({ onNavigatePartnership }: FooterProps) {
               }}
             >
               <img
-                src="/images/X_logo_2023.svg"
+                src={withBase('/images/X_logo_2023.svg')}
                 alt="X Logo"
                 style={{
                   height: '1.20em',

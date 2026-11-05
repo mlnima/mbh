@@ -10,6 +10,20 @@ import { MediaRibbon } from './components/MediaRibbon';
 import { Footer } from './components/Footer';
 import { references } from './data/references';
 import { useAnimatedText } from './hooks/useAnimatedText';
+import { BASE } from './base';
+
+/** window.location.pathname without the deploy base prefix, so the
+ *  router logic can stay written against the original site's paths. */
+function locationPath(): string {
+  const p = window.location.pathname;
+  return BASE && p.startsWith(BASE) ? p.slice(BASE.length) || '/' : p;
+}
+
+/** Absolute URL for the current deployment: original path under the
+ *  deploy base ("/mbh/partnership.php") or bare path locally. */
+function absoluteUrl(to: string): string {
+  return to.startsWith('/') ? `${BASE}${to}` : to;
+}
 
 function normalizePath(path: string): string {
   if (
@@ -26,11 +40,11 @@ function normalizePath(path: string): string {
 
 export default function App() {
   const [pathname, setPathname] = useState<string>(() =>
-    normalizePath(window.location.pathname),
+    normalizePath(locationPath()),
   );
 
   useEffect(() => {
-    const onPop = () => setPathname(normalizePath(window.location.pathname));
+    const onPop = () => setPathname(normalizePath(locationPath()));
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
@@ -48,7 +62,7 @@ export default function App() {
 
   const navigate = useCallback(
     (to: string, hash?: string) => {
-      const url = hash ? `${to}#${hash.replace(/^#/, '')}` : to;
+      const url = hash ? `${absoluteUrl(to)}#${hash.replace(/^#/, '')}` : absoluteUrl(to);
       window.history.pushState(null, '', url);
       setPathname(normalizePath(to));
       if (hash) {

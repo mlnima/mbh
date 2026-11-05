@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { MouseEvent as ReactMouseEvent } from 'react';
+import { BASE } from '../base';
 
 export function useNavBehaviors(pathname: string) {
   const [navHidden, setNavHidden] = useState(false);
@@ -77,7 +78,7 @@ export function useNavBehaviors(pathname: string) {
    *  smooth-scroll, and close the collapse on mobile. */
   const onNavLinkClick = useCallback(
     (e: ReactMouseEvent<HTMLAnchorElement>, targetId: string) => {
-      const url = `${pathname}#${targetId}`;
+      const url = `${BASE}${pathname}#${targetId}`;
       window.history.pushState(null, '', url);
       setActiveHash(`#${targetId}`);
       const el = document.getElementById(targetId);

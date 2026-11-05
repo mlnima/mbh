@@ -1,5 +1,6 @@
 import { useI18n, indexT } from '../i18n';
 import { useNavBehaviors } from '../hooks/useNavBehaviors';
+import { withBase } from '../base';
 
 interface NavbarProps {
   pathname: string;
@@ -55,7 +56,7 @@ export function Navbar({ pathname, onNavigateHome, onNavigatePartnership }: Navb
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="/partnership.php"
+                href={withBase('/partnership.php')}
                 onClick={(e) => {
                   e.preventDefault();
                   onNavigatePartnership();

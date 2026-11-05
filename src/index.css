@@ -1,0 +1,33 @@
+/* Footer "Partnership & Collaboration" button — verbatim from index.php L1407-1436.
+   Loaded after public/style.css, matching the original cascade order. */
+#id1 {
+  color: #fff !important;
+  background-color: #007bff;
+  border-radius: 12px;
+  padding: 10px 24px;
+  margin: 10px 15px;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+  animation: glow 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#id1[href="/partnership.php"]:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 25px rgba(51, 161, 255, 0.9);
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #007bff;
+  }
+  to {
+    box-shadow: 0 0 25px #33a1ff;
+  }
+}

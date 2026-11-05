@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Local npm cache (redirected via .npmrc)
+.npm-cache/
+
+# Build output (regenerate with: npm run build)
+dist/
+
+# Original-site reference capture (22 MB scraping data, not source code)
+.reference/
+
+# Local tool artifacts (Windows ACL recovery tooling)
+.acl-recovery/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files
+.env
+.env.*
+*.local

@@ -1,0 +1,455 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    background-color: #000;
+    line-height: 2; /* Further increase line height */
+    margin: 0;
+}
+@media (max-width: 576px) {
+
+    .nav-link {
+    font-size: 0.8rem !important; /* 👈 Ziemlich klein */
+    padding: 0.5rem 0;
+  }
+
+    body {
+        font-size: 90%; /* Scale down overall font size */
+    }
+
+    h1 {
+        font-size: 2.0rem !important; /* Adjust hero heading size for smaller screens */
+        word-wrap: break-word; /* Ensure long words wrap */
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.0rem !important; /* Resize section titles for small screens */
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.0rem !important;
+    }
+
+    p, li, a {
+        font-size: 1.0rem !important; /* Adjust paragraph and link text size */
+    }
+
+    .container,
+    .container-fluid {
+        max-width: 100%; /* Fit containers to screen */
+        padding: 1rem; /* Add tighter spacing */
+    }
+
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar-brand img {
+        max-height: 40px !important; /* Resize logo for smaller screens */
+        width: auto;
+    }
+
+    .nav-link {
+        font-size: 0.8rem !important; /* Smaller navigation links */
+        padding: 0.5rem 0;
+    }
+
+    .card {
+        font-size: 0.9rem !important; /* Reduce card text size */
+    }
+
+    .btn {
+        font-size: 0.9rem !important; /* Reduce button text size */
+        padding: 0.3rem 0.6rem; /* Reduce button padding */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        
+    }
+
+    section {
+        padding: 1rem 0; /* Adjust section padding */
+    }
+
+    footer {
+        padding: 1rem;
+        font-size: 0.8rem !important; /* Reduce footer font size */
+    }
+}
+/* Navbar */
+nav {
+    background: #111;
+    padding: 20px 0;
+}
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /* Bigger font size */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.nav-item.active .nav-link {
+    font-weight: bold; /* Makes the active link bold */
+    color: white; /* Keeps it white */
+}
+
+/* Default style for nav-link */
+.nav-link {
+    font-weight: normal; /* Ensures non-active links are normal weight */
+}
+/* Hero Section */
+#hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px; /* Large hero heading */
+    color: #fff;
+}
+#hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px; /* Bigger paragraph text */
+    color: #ccc;
+}
+
+/* Section Titles */
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px; /* Bigger section titles */
+    color: #fff;
+    margin-bottom: 30px;
+}
+section p {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 30px 0;
+    text-align: center;
+}
+footer h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /* Bigger footer title */
+    color: #fff;
+}
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px; /* Bigger footer text */
+    color: #ccc;
+}
+
+/* aboutus Section */
+#aboutus {
+    background-color: #111;
+    color: #fff;
+    padding-top: 60px; /* Adjust this value to the height of your navbar */
+
+}
+
+#aboutus h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px; /* Bigger heading */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#aboutus p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 2.2;
+    color: #ccc;
+}
+
+#aboutus img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#studium {
+    background-color: #121212;
+    color: #fff;
+    padding: 80px 0;
+}
+
+#studium h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px; /* Larger heading */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#studium p {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+
+}
+.service-row {
+    background-color: #1c1c1c; /* Slightly lighter background for distinction */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    margin-bottom: 40px; /* Increased space between rows */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover Effects */
+.service-row:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Service Title */
+.service-row h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    border-bottom: 2px solid #444; /* Underline effect */
+    padding-bottom: 5px; /* Spacing under title */
+}
+
+/* Service Description */
+.service-row p {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Service List */
+.service-row ul {
+    padding-left: 20px; /* Indent for bullets */
+    list-style-type: disc;
+}
+
+.service-row ul li {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Separator */
+.separator {
+    height: 2px; /* Thinner line */
+    background-color: #333; /* Darker separator */
+    margin: 20px 0; /* Increased spacing around separator */
+    border-radius: 2px;
+}
+
+
+
+#Publikation {
+   background-color:  #3a3f45;
+    color: #e5e5e5; /* Helle Textfarbe für besseren Kontrast */
+    padding: 60px 0;
+}
+
+#Publikation h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff; /* Heller Titel für besseren Fokus */
+    margin-bottom: 20px;
+}
+
+#Publikation p {
+    font-family: 'Roboto', sans-serif;
+    color: #cccccc; /* Softere Textfarbe */
+    line-height: 1.6;
+}
+
+#Publikation ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    color: #cccccc;
+}
+
+.card {
+    background-color: #2a2f35; /* Dunkler als zuvor */
+    color: #f1f1f1; /* Helle Schrift für Kontrast */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff; /* Klare und helle Schrift */
+}
+
+.card p {
+    font-family: 'Roboto', sans-serif;
+    color: #dddddd; /* Etwas softer für Text */
+}
+.card-body {
+    padding: 20px;
+}
+
+
+#kontakt {
+    background-color: #50565b; /* Angenehm dunkles Grau */
+    color: #ffffff; /* Weiß für Text */
+    padding: 60px 0;
+}
+
+#kontakt h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #f1f1f1;
+    font-size:30px;
+}
+
+ #kontakt h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+#kontakt p {
+    font-family: 'Roboto', sans-serif;
+    color: #cccccc; /* Weicheres Grau für Text */
+    line-height: 1.6;
+}
+
+.map-container {
+    background-color: #444; /* Dunkleres Grau für die Karte */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 450px; /* Erhöhte Höhe der Karte */
+}
+
+
+
+#footer {
+    background-color: #50565b; /* Angenehm dunkles Grau */
+    color: #e5e5e5; /* Light text */
+    font-size: 23px; /* Slightly smaller text size */
+}
+
+#footer h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px; /* Slightly smaller heading size */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px; /* Smaller paragraph text */
+    margin-bottom: 5px; /* Less spacing between paragraphs */
+    color: #d1d1d1;
+}
+
+#footer a {
+    font-size: 23px; /* Smaller link text */
+    color: #9fa6ad;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #ffffff; /* Change color on hover */
+}
+
+#footer img {
+    max-width: 150px; /* Increase the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Optional: Add space below the logo */
+    
+}
+
+
+/* Animation for text appearance */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the text */
+.animated-text {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start position */
+    transition: opacity 3s ease-out, transform 3s ease-out; /* Smooth animation */
+}
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    background-color: #000;
+    line-height: 1.8;
+    margin: 0;
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    background: #111;
+    color: #e5e5e5;
+}
+
+footer h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+h4.text-uppercase {
+    color: white; /* Ensures it matches <h2> */
+}
+
+.nav-item .nav-link.active {
+    font-weight: bold;
+    color:white /* Example active color */
+}
